@@ -7,8 +7,6 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = trim($_POST['email']);
         $password = trim($_POST['password']);
-        $_SESSION['firstName'] = $user['firstName'];
-        $_SESSION['lastName'] = $user['lastName'];
 
         //fetch user by email
         $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");

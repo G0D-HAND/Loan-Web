@@ -1,0 +1,376 @@
+/* General Reset */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    font-size: 20px;
+}
+
+/* Body Styles */
+body {
+    background-color: #080710;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Background Effects */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.background .shape {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255,255,255,0.1));
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.shape:nth-child(1) {
+    background: linear-gradient(
+        #1845ad,
+        #23a2f6
+    );
+    top: -50px;
+    left: -50px;
+}
+
+.shape:nth-child(2) {
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
+    bottom: -50px;
+    right: -50px;
+}
+
+/* Parent Grid Container */
+.parent {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: auto 1fr 1fr 1fr; 
+    gap: 5px;
+    width: 80%;
+    max-width: 1200px;
+    height: 90vh;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Glass Container (Generic) */
+.glass-container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Header Section */
+header {
+    grid-column: 1 / -1;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: right;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+header button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #2a2553;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+header button:hover {
+    background-color: #443c7c;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between; /* Spread items across the header */
+    align-items: center;            /* Vertically center items */
+    padding: 10px 20px;        /* Optional: adjust for visibility */
+    border-bottom: 1px solid #ccc;  /* Optional: subtle divider */
+}
+
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(255, 165, 0, 0.9);
+    font-weight: 700;
+}
+
+.dashboard-header h3 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+.logout-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* ensures h1 and h3 are left-aligned */
+}
+
+
+/* Logout Button */
+.logout-button {
+    height: 40px;
+    width: 90px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 8px;
+    color: #f5f5f5;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logout-button:hover {
+    background: rgba(255, 99, 71, 0.7);
+    box-shadow: 0 4px 12px rgba(255, 99, 71, 0.5);
+}
+
+
+/* Navigation Section */
+nav {
+    grid-column: 1 / 3;
+    grid-row: 2 / 5;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+/* Nav Links */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Main Content */
+main {
+    grid-column: 3 / 11;
+    grid-row: 2 / 5;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+/* Account Overview & Loan Management */
+.account-overview h2,
+.loan-management h2 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.balance,
+.active-loan,
+.loan-item {
+    margin: 10px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.loan-request-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers the button horizontally */
+}
+
+/* Loan Request Form */
+.loan-request-form label,
+.loan-request-form textarea,
+.loan-request-form input{
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.loan-request-form textarea{
+    resize: none;
+    overflow: auto;
+}
+
+.loan-request-form input,
+.loan-request-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #605f65;
+    color: #fff;
+    outline: none;
+}
+
+.loan-request-form input:focus,
+.loan-request-form textarea:focus {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.loan-request-form button {
+    width: auto;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.loan-request-form button:hover {
+    background: rgba(76, 175, 80, 1);
+    box-shadow: 0 0 15px 2px rgba(76, 175, 80, 0.8);
+}
+
+/* Pending Loans */
+.pending-loans-list {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* Loan Item Buttons */
+.loan-item button {
+    height: 40px;
+    width: 90px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #f5f5f5;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.loan-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers the button horizontally */
+}
+
+.loan-item button:hover {
+    background: rgba(255, 99, 71, 0.7);
+    box-shadow: 0 4px 12px rgba(255, 99, 71, 0.5);
+}
+
+/* Scrollbar Styling */
+nav::-webkit-scrollbar,
+main::-webkit-scrollbar {
+    width: 8px;
+}
+
+nav::-webkit-scrollbar-thumb,
+main::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+nav::-webkit-scrollbar-thumb:hover,
+main::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    background: transparent; /* Keep it clean */
+    width: 0; /* Fully remove spinner space */
+    height: 0;
+}
+
+.loan-management .message.success {
+    color: rgba(76, 175, 80, 1);
+  }
+  
+  .loan-management .message.error {
+    color: rgba(255, 99, 71, 0.7);
+  }
+  
